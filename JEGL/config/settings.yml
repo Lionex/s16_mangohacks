@@ -21,7 +21,7 @@ database:
   user:     "_env:PGUSER:jegl"
   password: "_env:PGPASS:JEGL"
   host:     "_env:PGHOST:localhost"
-  port:     "_env:PGPORT:3000"
+  port:     "_env:PGPORT:5432"
   database: "_env:PGDATABASE:jegl"
   poolsize: "_env:PGPOOLSIZE:10"
 
