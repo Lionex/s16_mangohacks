@@ -24,6 +24,7 @@ library
                      Handler.Home
                      Handler.PostNew
                      Handler.SignIn
+                     Handler.PostDetails
 
     if flag(dev) || flag(library-only)
         cpp-options:   -DDEVELOPMENT
