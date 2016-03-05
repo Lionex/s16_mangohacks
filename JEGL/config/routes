@@ -6,3 +6,4 @@
 
 / HomeR GET POST
 /posts/new PostNewR GET
+/signin SignInR GET
