@@ -1,7 +1,11 @@
 <h1>#{movieTitle movieDetails}
 
 <article .jumbotron>
+    <img .responsive href="#{moviePicture movieDetails}">
     <ul>
         <li>#{movieGenre movieDetails}
         <li>#{movieRating movieDetails}
+        <li>#{movieSynopsis movieDetails}
         <li>#{movieUserReviews movieDetails}
+        <li>#{movieYear movieDetails}
+        <li>#{movieDirector movieDetails}

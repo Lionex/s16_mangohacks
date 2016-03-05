@@ -21,10 +21,13 @@ Email
 
 Movie
     title       Text
+    picture     Text
     genre       Text
     rating      Text
     synopsis    Text
     userReviews Text
+    year        Text
+    director    Text
 
 Review
     content     Text
