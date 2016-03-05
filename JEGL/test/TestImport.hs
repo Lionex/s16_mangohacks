@@ -10,6 +10,7 @@ import Database.Persist.Sql  (SqlPersistM, SqlBackend, runSqlPersistMPool, rawEx
 import Foundation            as X
 import Model                 as X
 import Test.Hspec            as X
+import Text.Shakespeare.Text (st)
 import Yesod.Default.Config2 (ignoreEnv, loadAppSettings)
 import Yesod.Test            as X
 
@@ -20,6 +21,7 @@ runDB query = do
 
 runDBWithApp :: App -> SqlPersistM a -> IO a
 runDBWithApp app query = runSqlPersistMPool query (appConnPool app)
+
 
 withApp :: SpecWith App -> Spec
 withApp = before $ do
@@ -38,16 +40,17 @@ wipeDB :: App -> IO ()
 wipeDB app = runDBWithApp app $ do
     tables <- getTables
     sqlBackend <- ask
-    let queries = map (\t -> "TRUNCATE TABLE " ++ connEscapeName sqlBackend (DBName t)) tables
 
-    -- In MySQL, a table cannot be truncated if another table references it via foreign key.
-    -- Since we're wiping both the parent and child tables, though, it's safe
-    -- to temporarily disable this check.
-    rawExecute "SET foreign_key_checks = 0;" []
-    forM_ queries (\q -> rawExecute q [])
-    rawExecute "SET foreign_key_checks = 1;" []
+    let escapedTables = map (connEscapeName sqlBackend . DBName) tables
+        query = "TRUNCATE TABLE " ++ intercalate ", " escapedTables
+    rawExecute query []
 
 getTables :: MonadIO m => ReaderT SqlBackend m [Text]
 getTables = do
-    tables <- rawSql "SHOW TABLES;" []
+    tables <- rawSql [st|
+        SELECT table_name
+        FROM information_schema.tables
+        WHERE table_schema = 'public';
+    |] []
+
     return $ map unSingle tables
