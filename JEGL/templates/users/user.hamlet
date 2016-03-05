@@ -1,0 +1,4 @@
+<h1>#{usersName userDetails}
+
+<article .jumbotron>
+    <ul>

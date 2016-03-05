@@ -1,0 +1,7 @@
+<h1>#{movieTitle movieDetails}
+
+<article .jumbotron>
+    <ul>
+        <li>#{movieGenre movieDetails}
+        <li>#{movieRating movieDetails}
+        <li>#{movieUserReviews movieDetails}

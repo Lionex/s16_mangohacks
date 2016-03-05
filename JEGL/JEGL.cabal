@@ -22,9 +22,12 @@ library
                      Settings.StaticFiles
                      Handler.Common
                      Handler.Home
-                     Handler.PostNew
                      Handler.SignIn
-                     Handler.PostDetails
+                     Handler.Users
+                     Handler.UserDetails
+                     Handler.Movies
+                     Handler.MovieDetails
+                     Handler.NewMovie
 
     if flag(dev) || flag(library-only)
         cpp-options:   -DDEVELOPMENT

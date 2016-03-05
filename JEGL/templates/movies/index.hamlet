@@ -1,0 +1,7 @@
+<h1>Movie Directory
+<div .jumbotron>
+    <ul>
+        $forall Entity id movie <- allPosts
+            <h4>
+                <li>
+                    <a href=@{MovieDetailsR id}>#{movie movieTitle}

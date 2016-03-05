@@ -1,0 +1,3 @@
+<form method=post action=@{NewMovieR} enctype=#{enctype}>
+    ^{widget}
+    <button class="btn btn-default">Create Post!

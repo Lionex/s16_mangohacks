@@ -1,16 +1,35 @@
 User
-    ident Text
-    password Text Maybe
-    UniqueUser ident
+    ident       Text
+    password    Text Maybe
+    UniqueUser  ident
     deriving Typeable
+
+Users
+    name        Text
+    password    Text
+    email       Text
+    friends     Int List
+    reviews     Text Maybe List
+    movies      Movie Maybe List
+
 Email
-    email Text
-    user UserId Maybe
-    verkey Text Maybe
+    email       Text
+    user        UserId Maybe
+    verkey      Text Maybe
     UniqueEmail email
 
-BlogPost
-    title Text
-    article Text
+
+Movie
+    title       Text
+    genre       Text
+    rating      Text
+    synopsis    Text
+    userReviews Text
+
+Review
+    content     Text
+    movieId     Movie
+    userId      User
+
 
  -- By default this file is used in Model.hs (which is imported by Foundation.hs)
