@@ -38,7 +38,6 @@ import Handler.UserDetails
 import Handler.Movies
 import Handler.MovieDetails
 import Handler.NewMovie
-import Handler.FilmReviews
 import Handler.NewReview
 
 -- This line actually creates our YesodDispatch instance. It is the second half

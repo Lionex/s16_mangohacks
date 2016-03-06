@@ -25,7 +25,7 @@ getNewMovieR = do
 postNewMovieR :: Handler Html
 postNewMovieR = do
     ((res, widget), enctype) <- runFormPost $ renderBootstrap3 BootstrapBasicForm newMovieForm
-    case res of
+    case res of 
         FormSuccess movie -> do
             movieId <- runDB $ insert movie
             redirect $ MovieDetailsR movieId

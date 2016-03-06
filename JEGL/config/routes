@@ -18,5 +18,4 @@
 /movies/new                   NewMovieR      GET POST
 
 -- To view and create film reviews.
-/movies/reviews/!#MovieId     FilmReviewsR   GET
-/movies/reviews/!#MovieId/new NewReviewR     GET POST
+=/movies/!#MovieId/newReview  NewReviewR     GET POST

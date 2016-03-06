@@ -10,4 +10,6 @@
         <li>#{movieDirector movieDetails}
 
 <aside>
-    <h3><a href="@{FilmReviewsR movieId}">Reviews
+    <h3>User Reviews:
+        $forall Entity id review <- movieReviews
+            <^{review id}>

@@ -16,10 +16,10 @@ getNewReviewR movieId = do
         $(widgetFile "reviews/new")
 
 postNewReviewR :: MovieId -> Handler Html
-postNewReviewR movieId = do
+postNewReviewR movieId = do error "not implemented"
     ((res, widget), enctype) <- runFormPost $ renderBootstrap3 BootstrapBasicForm newReviewForm
     case res of
         FormSuccess review -> do
             reviewId <- runDB $ insert review
-            redirect $ FilmReviewsR movieId
+            redirect $ MovieDetailsR movieId
         _ -> defaultLayout $(widgetFile "reviews/list")

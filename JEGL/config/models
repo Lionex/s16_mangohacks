@@ -9,8 +9,9 @@ Users
     password    Text
     email       Text
     image       Text
-    friends     Int List
+    friends     UserId List
     movies      Movie Maybe List
+
 
 Email
     email       Text
