@@ -1,0 +1,8 @@
+<h2>Reustaurants in Miami Beach:
+
+$forall Entity id restaurant <- restaurantList
+    <h3>#{restaurantName restaurant}
+        <h4>Description
+        <p>#{restaurantDesc restaurant}
+        <h4>Location:
+        <p>#{restaurantLocation restaurant}
