@@ -8,14 +8,13 @@ import Yesod.Form.Bootstrap3
 
 newMovieForm :: AForm Handler Movie
 newMovieForm = Movie
-            <$> areq textField (bfs ("Title"    :: Text)) Nothing
+            <$> areq textField (bfs ("Title"       :: Text)) Nothing
             <*> areq textField (bfs ("Image URL"   :: Text)) Nothing
-            <*> areq textField (bfs ("Genre"    :: Text)) Nothing
-            <*> areq textField (bfs ("Rating"   :: Text)) Nothing
-            <*> areq textField (bfs ("Synopsis" :: Text)) Nothing
-            <*> areq textField (bfs ("Review"   :: Text)) Nothing
-            <*> areq textField (bfs ("Year"   :: Text)) Nothing
-            <*> areq textField (bfs ("Director"   :: Text)) Nothing
+            <*> areq textField (bfs ("Genre"       :: Text)) Nothing
+            <*> areq textField (bfs ("Rating"      :: Text)) Nothing
+            <*> areq textField (bfs ("Synopsis"    :: Text)) Nothing
+            <*> areq textField (bfs ("Year"        :: Text)) Nothing
+            <*> areq textField (bfs ("Director"    :: Text)) Nothing
 
 getNewMovieR :: Handler Html
 getNewMovieR = do

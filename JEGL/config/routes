@@ -2,16 +2,21 @@
 /auth   AuthR   Auth   getAuth
 
 
-/favicon.ico        FaviconR      GET
-/robots.txt         RobotsR       GET
+/favicon.ico                  FaviconR       GET
+/robots.txt                   RobotsR        GET
 
+/                             HomeR          GET
 
-/                   HomeR         GET
+-- To sign up and interact with other users.
+/users/signin                 SignInR        GET POST
+/users/                       UsersR         GET
+/users/!#UsersId              UserDetailsR   GET
 
+-- To view and create entries for movies.
+/movies/                      MoviesR        GET
+/movies/!#MovieId             MovieDetailsR  GET
+/movies/new                   NewMovieR      GET POST
 
-/users/signin       SignInR       GET POST
-/users/             UsersR        GET
-/users/!#UsersId    UserDetailsR  GET
-/movies/            MoviesR       GET
-/movies/!#MovieId   MovieDetailsR GET
-/movies/new         NewMovieR     GET POST
+-- To view and create film reviews.
+/movies/reviews/!#MovieId     FilmReviewsR   GET
+/movies/reviews/!#MovieId/new NewReviewR     GET POST

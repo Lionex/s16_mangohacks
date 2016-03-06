@@ -1,7 +1,7 @@
 <h1>User Directory
 <div .jumbotron>
     <ul>
-        $forall Entity id user <- allPosts
+        $forall Entity id user <- allUsers
             <h4>
                 <li>
-                    <a href=@{UserDetailsR id}>#{user usersName}
+                    <a href=@{UserDetailsR id}>#{usersName user}

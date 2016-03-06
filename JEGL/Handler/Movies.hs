@@ -3,4 +3,7 @@ module Handler.Movies where
 import Import
 
 getMoviesR :: Handler Html
-getMoviesR = error "Not yet implemented: getMoviesR"
+getMoviesR = do
+    allMovies <- runDB $ selectList [] [Asc MovieId]
+    defaultLayout $ do
+        $(widgetFile "movies/index")

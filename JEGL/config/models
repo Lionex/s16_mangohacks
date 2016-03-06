@@ -8,8 +8,8 @@ Users
     name        Text
     password    Text
     email       Text
+    image       Text
     friends     Int List
-    reviews     Text Maybe List
     movies      Movie Maybe List
 
 Email
@@ -25,14 +25,13 @@ Movie
     genre       Text
     rating      Text
     synopsis    Text
-    userReviews Text
     year        Text
     director    Text
 
 Review
+    title       Text
     content     Text
-    movieId     Movie
-    userId      User
-
+    movie       MovieId
+    user        UsersId
 
  -- By default this file is used in Model.hs (which is imported by Foundation.hs)

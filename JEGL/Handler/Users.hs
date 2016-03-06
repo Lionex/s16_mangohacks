@@ -6,7 +6,6 @@ import Yesod.Form.Bootstrap3 (BootstrapFormLayout (..), renderBootstrap3,
 
 getUsersR :: Handler Html
 getUsersR  =  do
-    allPosts <- runDB $ selectList [] [Desc UsersId]
-    error "Does not fucking work"
-    -- defaultLayout $ do
-    --     $(widgetFile "users/index")
+    allUsers <- runDB $ selectList [] [Desc UsersId]
+    defaultLayout $ do
+        $(widgetFile "users/index")

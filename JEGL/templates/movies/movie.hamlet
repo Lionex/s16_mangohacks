@@ -1,11 +1,13 @@
-<h1>#{movieTitle movieDetails}
+<h2>#{movieTitle movieDetails}
 
 <article .jumbotron>
-    <img .responsive href="#{moviePicture movieDetails}">
+    <img .responsive src="#{moviePicture movieDetails}">
     <ul>
         <li>#{movieGenre movieDetails}
         <li>#{movieRating movieDetails}
         <li>#{movieSynopsis movieDetails}
-        <li>#{movieUserReviews movieDetails}
         <li>#{movieYear movieDetails}
         <li>#{movieDirector movieDetails}
+
+<aside>
+    <h3><a href="@{FilmReviewsR movieId}">Reviews

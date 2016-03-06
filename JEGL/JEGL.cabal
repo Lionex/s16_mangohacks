@@ -28,6 +28,8 @@ library
                      Handler.Movies
                      Handler.MovieDetails
                      Handler.NewMovie
+                     Handler.FilmReviews
+                     Handler.NewReview
 
     if flag(dev) || flag(library-only)
         cpp-options:   -DDEVELOPMENT
